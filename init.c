@@ -5,7 +5,7 @@
 *  extern void freeAnimations( void );
 * extern void closeFont( TTF_Font * ); */
 
-void init( char *title, SDL )
+void init( char *title, SDL_Window &initWindow, SDL_Renderer &initRenderer  )
 {
 
 }
