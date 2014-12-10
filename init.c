@@ -30,6 +30,17 @@ void init( char *title )
     exit(1);
   }
 
+  /*Normally wouldn't comment this, but here we have a nice little trick where we write
+  everything to a surface and then load it into a GPU texture, making sure to set
+  SDL_TEXTUREACCESS_STREAMING so it doesn't barf */
+
+  game.bgSurface = SDL_CreateRGBSurface( 0, SCREEN_WIDTH, SCREEN_HEIGHT, 32, 0, 0, 0, 0 );
+
+  game.bgTexture = SDL_CreateTexture( game.gameRenderer, SDL_PIXELFORMAT_ARGB8888,
+                                                         SDL_TEXTUREACCESS_STREAMING,
+                                                         SCREEN_WIDTH,
+                                                         SCREEN_HEIGHT );
+
 }
 
 void cleanup()
