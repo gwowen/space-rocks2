@@ -1,4 +1,5 @@
 /* structs.h - all the main structs for the game go here */
+#include "defs.h"
 
 typedef struct Game
 {
