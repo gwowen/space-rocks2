@@ -30,7 +30,7 @@ void init( char *title )
     exit(1);
   }
 
-  /*Normally wouldn't comment this, but here we have a nice little trick where we write
+  /*Normally wouldn't comment this, but here we have a little trick where we write
   everything to a surface and then load it into a GPU texture, making sure to set
   SDL_TEXTUREACCESS_STREAMING so it doesn't barf */
 

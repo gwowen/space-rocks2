@@ -5,8 +5,8 @@ extern void cleanup();
 
 
 int main( int argc, char* argv[] )
-{
-  bool running;
+{  
+  unsigned int Limit = SDL_GetTicks() + 16;
 
   init( "Space Rocks!" );
 
