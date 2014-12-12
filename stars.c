@@ -24,22 +24,6 @@ void doStars()
     }
 }
 
-void drawStars() {
-  SDL_Rect rect;
-
-  for( int i = 0; i < MAX_STARS; ++i )
-    {
-        if( stars[i].x < SCREEN_WIDTH ) {
-          rect.x = stars[i].x;
-          rect.y = stars[i].y;
-          rect.w = 1;
-          rect.h = 1;
-
-          SDL_FillRect( game.bgSurface, &rect, getStarColor( stars[i].speed ) );
-        }
-    }
-}
-
 int getStarColor( int speed ) {
 
   SDL_Color color;
@@ -69,4 +53,20 @@ int getStarColor( int speed ) {
 
     return SDL_MapRGB( game.bgSurface->format, color.r, color.g, color.b );
 
+}
+
+void drawStars() {
+  SDL_Rect rect;
+
+  for( int i = 0; i < MAX_STARS; ++i )
+    {
+        if( stars[i].x < SCREEN_WIDTH ) {
+          rect.x = stars[i].x;
+          rect.y = stars[i].y;
+          rect.w = 1;
+          rect.h = 1;
+
+          SDL_FillRect( game.bgSurface, &rect, getStarColor( stars[i].speed ) );
+        }
+    }
 }
