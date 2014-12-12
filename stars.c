@@ -4,9 +4,9 @@ void resetStars()
 {
   for( int i = 0; i < MAX_STARS; ++i )
     {
-      star[i].x = rand() % SCREEN_WIDTH;
-      star[i].y = rand() % SCREEN_HEIGHT;
-      star[i].speed = 1 + ( rand() % 12 );
+      stars[i].x = rand() % SCREEN_WIDTH;
+      stars[i].y = rand() % SCREEN_HEIGHT;
+      stars[i].speed = 1 + ( rand() % 12 );
     }
 }
 
@@ -16,7 +16,7 @@ void doStars()
     {
         stars[i].x -= stars[i].speed;
 
-        if( stars[i],x < 0 ) {
+        if( stars[i].x < 0 ) {
           stars[i].x = SCREEN_WIDTH + rand() % 20;
           stars[i].y = rand() % SCREEN_HEIGHT;
           stars[i].speed = 1 + ( rand() % 12 );
@@ -24,7 +24,7 @@ void doStars()
     }
 }
 
-void updateStars() {
+void drawStars() {
   SDL_Rect rect;
 
   for( int i = 0; i < MAX_STARS; ++i )

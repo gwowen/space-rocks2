@@ -1,10 +1,12 @@
 #include "draw.h"
 
+extern void drawStars();
+
 void draw()
 {
-  doStars();
+
   SDL_FillRect( game.bgSurface, NULL, 0 );
-  updateStars();
+  drawStars();
   SDL_UpdateTexture( game.bgTexture, NULL, game.bgSurface->pixels, game.bgSurface->pitch );
   SDL_RenderCopy( game.gameRenderer, game.bgTexture, NULL, NULL );
   SDL_RenderPresent( game.gameRenderer );
