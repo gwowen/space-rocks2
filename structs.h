@@ -21,4 +21,19 @@ typedef struct Star
   int x, y, speed;
 } Star;
 
+typedef struct Sprite
+{
+  SDL_Texture *image;
+} Sprite;
+
+typedef struct Entity
+{
+  int active, speed;
+  int x, y, w, h;
+  int currentFrame, animID, frameTimer;
+  SDL_Texture* sprite;
+  void (*action)(void);
+  void (*draw)(void);
+} Entity;
+
 /*TODO: add structs for Animation, Sprite, Sound, Entities and Stars*/
