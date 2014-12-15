@@ -1,6 +1,8 @@
 #include "draw.h"
 
+extern void drawEntities();
 extern void drawStars();
+extern void drawPlayer();
 
 void draw()
 {
@@ -9,7 +11,9 @@ void draw()
   drawStars();
   SDL_UpdateTexture( game.bgTexture, NULL, game.bgSurface->pixels, game.bgSurface->pitch );
   SDL_RenderCopy( game.gameRenderer, game.bgTexture, NULL, NULL );
+  drawPlayer();
   SDL_RenderPresent( game.gameRenderer );
+  SDL_Delay( 1 );
 }
 
 void delay( unsigned int frameLimit )
