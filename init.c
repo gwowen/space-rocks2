@@ -29,6 +29,13 @@ void init( char *title )
     printf( "Could not create renderer, SDL Error %s", SDL_GetError() );
     exit(1);
   }
+  else {
+    int imgFlags = IMG_INIT_PNG;
+    if( ! ( IMG_Init( imgFlags) &imgFlags ) ) {
+      printf( "SDL_image could not initialize. SDL_image error%s \n", IMG_GetError() );
+      exit(1);
+    }
+  }
 
   /*Normally wouldn't comment this, but here we have a little trick where we write
   everything to a surface and then load it into a GPU texture, making sure to set

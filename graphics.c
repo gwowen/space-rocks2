@@ -3,7 +3,7 @@
 SDL_Texture* loadImage( char* filename )
 {
   SDL_Texture* newTexture = NULL;
-  SDL_Surface* tempSurface = IMG_LOAD( filename );
+  SDL_Surface* tempSurface = IMG_Load( filename );
 
   if( tempSurface == NULL ) {
     printf( "Unable to load image %s! SDL_image error: %s\n", filename, IMG_GetError() );
@@ -22,15 +22,15 @@ SDL_Texture* loadImage( char* filename )
   return newTexture;
 }
 
-void drawImage( SDL_Texture* &drawTex, int x, int y )
+
+void drawImage( SDL_Texture* drawTex, int x, int y )
 {
   SDL_Rect dest;
 
   dest.x = x;
   dest.y = y;
-  dest.w = image->w;
-  dest.h = image->h;
 
+  SDL_QueryTexture( drawTex, NULL, NULL, &dest.w, &dest.h );
   SDL_RenderCopy( game.gameRenderer, drawTex, NULL, &dest );
 }
 

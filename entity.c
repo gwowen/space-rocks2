@@ -4,7 +4,20 @@ extern void drawImage( SDL_Texture*, int, int );
 
 void clearEntities()
 {
-  for( int i = 0; i < MAX_ENTITIES; ++i )
+  int i;
+
+  for( i = 0; i < MAX_ENTITIES; ++i )
+    {
+      memset( &entity[i], 0, sizeof( Entity ) );
+    }
+}
+
+
+int getFreeEntity()
+{
+  int i;
+
+  for( i = 0; i < MAX_ENTITIES; ++i )
     {
       if( entity[i].active == 0 ) {
           memset( &entity[i], 0, sizeof( Entity ) );
@@ -19,7 +32,10 @@ void clearEntities()
 
 void doEntities()
 {
-  for( int i = 0; i < MAX_ENTITIES; ++i )
+
+  int i;
+
+  for( i = 0; i < MAX_ENTITIES; ++i )
     {
       self = &entity[i];
 
@@ -30,9 +46,11 @@ void doEntities()
     }
 }
 
-void doEntities()
+void drawEntities()
 {
-  for( int i = 0; i < MAX_ENTITIES; ++i )
+  int i;
+
+  for( i = 0; i < MAX_ENTITIES; ++i )
     {
       self = &entity[i];
 
