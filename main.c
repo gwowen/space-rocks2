@@ -6,14 +6,16 @@ extern void getInput();
 extern void doStars();
 extern void initPlayer();
 extern void doPlayer();
+extern void doEntities();
 extern void loadAllSprites();
 extern void draw();
 extern void resetStars();
+extern void delay( unsigned int );
 
 
 int main( int argc, char* argv[] )
 {
-  unsigned int Limit = SDL_GetTicks() + 16;
+  unsigned int frameLimit = SDL_GetTicks() + 16;
 
   init( "Space Rocks!" );
 
@@ -36,9 +38,15 @@ int main( int argc, char* argv[] )
 
      doPlayer();
 
+     doEntities();
+
      doStars();
 
      draw();
+
+     delay( frameLimit );
+
+     frameLimit = SDL_GetTicks() + 16;
   }
 
   exit( 0 );

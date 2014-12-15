@@ -8,11 +8,19 @@ void draw()
 {
 
   SDL_FillRect( game.bgSurface, NULL, 0 );
+
   drawStars();
+
   SDL_UpdateTexture( game.bgTexture, NULL, game.bgSurface->pixels, game.bgSurface->pitch );
+
   SDL_RenderCopy( game.gameRenderer, game.bgTexture, NULL, NULL );
+
   drawPlayer();
+
+  drawEntities();
+
   SDL_RenderPresent( game.gameRenderer );
+
   SDL_Delay( 1 );
 }
 
