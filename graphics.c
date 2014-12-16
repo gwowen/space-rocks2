@@ -1,5 +1,7 @@
 #include "graphics.h"
 
+/* load images into an SDL_Surface then convert to a texture */
+
 SDL_Texture* loadImage( char* filename )
 {
   SDL_Texture* newTexture = NULL;
@@ -71,5 +73,7 @@ void freeSprites()
 
 void loadAllSprites()
 {
+  /* load the player sprite into its slot
+  for later reference */
   loadSprite( PLAYER_SPRITE, "assets/firefly.png" );
 }

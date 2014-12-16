@@ -70,5 +70,4 @@ void drawPlayer()
   {
     drawImage( player.sprite, player.x, player.y );
   }
-
 }

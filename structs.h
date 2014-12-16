@@ -16,6 +16,12 @@ typedef struct Control
   int up, down, left, right;
 } Control;
 
+typedef struct Animation
+{
+  int frameCount;
+  SDL_Texture **frame;
+} Animation;
+
 typedef struct Star
 {
   int x, y, speed;
@@ -36,4 +42,4 @@ typedef struct Entity
   void (*draw)(void);
 } Entity;
 
-/*TODO: add structs for Animation, Sprite, Sound, Entities and Stars*/
+/* TODO: add struct for Sound */
