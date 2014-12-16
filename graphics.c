@@ -75,5 +75,5 @@ void loadAllSprites()
 {
   /* load the player sprite into its slot
   for later reference */
-  loadSprite( PLAYER_SPRITE, "assets/firefly.png" );
+  loadSprite( PLAYER_SPRITE, "gfx/firefly.png" );
 }

@@ -8,6 +8,8 @@ extern void initPlayer();
 extern void doPlayer();
 extern void doEntities();
 extern void loadAllSprites();
+extern void addRock( int );
+extern void loadAllAnimations();
 extern void draw();
 extern void resetStars();
 extern void delay( unsigned int );
@@ -26,6 +28,8 @@ int main( int argc, char* argv[] )
   /* load all the sprites (player's actually) */
   loadAllSprites();
 
+  loadAllAnimations();
+
   /* initialize the player */
   initPlayer();
 
@@ -37,6 +41,8 @@ int main( int argc, char* argv[] )
      getInput();
 
      doPlayer();
+
+     addRock( 10000 );
 
      doEntities();
 
