@@ -71,5 +71,5 @@ void drawStandardEntity()
 
 void drawAnimatedEntity()
 {
-
+  drawImage( animation[self->animID].frame[self->currentFrame], self->x, self->y );
 }
