@@ -63,7 +63,9 @@ SDL_Texture* getSprite( int index )
 
 void freeSprites()
 {
-  for( int i = 0; i < MAX_SPRITES; ++i )
+  int i;
+  
+  for( i = 0; i < MAX_SPRITES; ++i )
     {
         if( sprite[i].image != NULL ) {
           SDL_DestroyTexture( sprite[i].image );
@@ -75,5 +77,5 @@ void loadAllSprites()
 {
   /* load the player sprite into its slot
   for later reference */
-  loadSprite( PLAYER_SPRITE, "gfx/firefly.png" );
+  loadSprite( PLAYER_SPRITE, "../gfx/firefly.png" );
 }

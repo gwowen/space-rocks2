@@ -63,7 +63,7 @@ void freeAnimation( Animation *anim )
 
 void loadAllAnimations()
 {
-  loadAnimation( ROCK_ANIMATION, "animdata/rock.dat");
+  loadAnimation( ROCK_ANIMATION, "../animdata/rock.dat");
 }
 
 void freeAnimations()

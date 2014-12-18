@@ -7,6 +7,7 @@ extern void drawString( char*, int, int, TTF_Font * );
 
 void draw()
 {
+  char text[20];
 
   SDL_FillRect( game.bgSurface, NULL, 0 );
 

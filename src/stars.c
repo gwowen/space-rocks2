@@ -2,7 +2,9 @@
 
 void resetStars()
 {
-  for( int i = 0; i < MAX_STARS; ++i )
+  int i;
+
+  for( i = 0; i < MAX_STARS; ++i )
     {
       stars[i].x = rand() % SCREEN_WIDTH;
       stars[i].y = rand() % SCREEN_HEIGHT;
@@ -12,7 +14,9 @@ void resetStars()
 
 void doStars()
 {
-  for( int i = 0; i < MAX_STARS; ++i )
+  int i;
+
+  for( i = 0; i < MAX_STARS; ++i )
     {
         stars[i].x -= stars[i].speed;
 
@@ -60,8 +64,9 @@ int getStarColor( int speed )
 void drawStars()
 {
   SDL_Rect rect;
+  int i;
 
-  for( int i = 0; i < MAX_STARS; ++i )
+  for( i = 0; i < MAX_STARS; ++i )
     {
         if( stars[i].x < SCREEN_WIDTH )
         {
