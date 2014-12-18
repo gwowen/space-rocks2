@@ -3,6 +3,7 @@
 extern void drawEntities();
 extern void drawStars();
 extern void drawPlayer();
+extern void drawString( char*, int, int, TTF_Font * );
 
 void draw()
 {
