@@ -45,7 +45,7 @@ int main( int argc, char* argv[] )
 
      doPlayer();
 
-     addRock( 10000 );
+     addRock( game.score );
 
      doEntities();
 
