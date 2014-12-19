@@ -3,7 +3,7 @@
 extern void drawEntities();
 extern void drawStars();
 extern void drawPlayer();
-extern void drawString( char*, int, int, TTF_Font * );
+extern void drawString( char*, int, int, TTF_Font *, int, int );
 
 void draw()
 {
@@ -16,6 +16,10 @@ void draw()
   SDL_UpdateTexture( game.bgTexture, NULL, game.bgSurface->pixels, game.bgSurface->pitch );
 
   SDL_RenderCopy( game.gameRenderer, game.bgTexture, NULL, NULL );
+
+  sprintf( text, "SCORE: %06d", game.score );
+
+  drawString( text, 100, 10, game.gameFont, 1, 0 );
 
   drawPlayer();
 

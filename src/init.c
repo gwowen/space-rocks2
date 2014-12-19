@@ -37,6 +37,11 @@ void init( char *title )
     }
   }
 
+  if( TTF_Init() < 0 ) {
+    printf("Couldn't initialize SDL TTF: %s\n", SDL_GetError() );
+    exit(1);
+  }
+
   /*Normally wouldn't comment this, but here we have a little trick where we write
   everything to a surface and then load it into a GPU texture, making sure to set
   SDL_TEXTUREACCESS_STREAMING so it doesn't barf */

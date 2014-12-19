@@ -8,6 +8,7 @@ extern void initPlayer();
 extern void doPlayer();
 extern void doEntities();
 extern void loadAllSprites();
+extern TTF_Font *loadFont( char *, int);
 extern void addRock( int );
 extern void loadAllAnimations();
 extern void draw();
@@ -30,6 +31,8 @@ int main( int argc, char* argv[] )
 
   loadAllAnimations();
 
+  game.gameFont = loadFont( "../font/font.ttf", 16 );
+
   /* initialize the player */
   initPlayer();
 
@@ -49,6 +52,11 @@ int main( int argc, char* argv[] )
      doStars();
 
      draw();
+
+     if( player.active == 1 )
+     {
+       game.score += 10;
+     }
 
      delay( frameLimit );
 
