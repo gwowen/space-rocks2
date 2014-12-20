@@ -7,6 +7,7 @@ extern void doStars();
 extern void initPlayer();
 extern void doPlayer();
 extern void doEntities();
+extern void doCollisions();
 extern void loadAllSprites();
 extern TTF_Font *loadFont( char *, int);
 extern void addRock( int );
@@ -50,6 +51,8 @@ int main( int argc, char* argv[] )
      doEntities();
 
      doStars();
+
+     doCollisions();
 
      draw();
 

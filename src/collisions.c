@@ -7,7 +7,28 @@ int collision( int, int, int, int, int, int, int, int );
 
 void doCollisions()
 {
+  int i;
 
+  /*Here we check each entity against the player, and skip over the inactive ones*/
+
+  if( player.active == 0 )
+  {
+    return;
+  }
+
+  for( i = 0; i < MAX_ENTITIES; ++i )
+  {
+    if( entity[i].active == 0 )
+    {
+      continue;
+    }
+
+    if( collision( entity[i].x, entity[i].y, entity[i].w, entity[i].h, player.x, player.y, player.w, player.h ) )
+    {
+      //TODO: we need an explosion sound here... also need to introduce lives
+      player.active = 0;
+    }
+  }
 }
 
 int collision( int x0, int y0, int w0, int h0, int x2, int y2, int w1, int h1 )
