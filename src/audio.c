@@ -10,7 +10,7 @@ void loadSound( int index, char* filename )
   }
 
   sound[index].effect = Mix_LoadWAV( filename );
-  printf ( "Sound %s loaded!", filename );
+  printf ( "Sound %s loaded!\n", filename );
 
   if( sound[index].effect == NULL )
   {
