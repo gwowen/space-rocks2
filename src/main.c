@@ -30,6 +30,7 @@ int main( int argc, char* argv[] )
   /* load all the sprites (player's actually) */
   loadAllSprites();
 
+  /* load all frames of rock sprites */
   loadAllAnimations();
 
   game.gameFont = loadFont( "../font/font.ttf", 16 );
@@ -44,23 +45,32 @@ int main( int argc, char* argv[] )
   {
      getInput();
 
+
+     /* draw player, check if player is alive */
      doPlayer();
 
+    /* add rocks depending on the game's score, higher the score, higher the amount of rocks */
      addRock( game.score );
 
+    /* loop through the rocks to check that they're still on the screen */
      doEntities();
 
+    /* draw stars */
      doStars();
 
+    /* collision detection */
      doCollisions();
 
+    /* draw everything that's on screen */
      draw();
 
+  /* for every second the player is alive, they get 10 points! */
      if( player.active == 1 )
      {
        game.score += 10;
      }
 
+    /* control the frame rate to avoid sucking up CPU */
      delay( frameLimit );
 
      frameLimit = SDL_GetTicks() + 16;
