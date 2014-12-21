@@ -15,7 +15,7 @@ void loadAnimation( int id, char *name )
     exit(1);
   }
 
-  /* Read the frame count */
+  /* Read the frame count from the file */
   fscanf( fp, "%d", &animation[id].frameCount );
 
   /*Allocate space for animation */
@@ -28,7 +28,7 @@ void loadAnimation( int id, char *name )
     exit(1);
   }
 
-  /* load up each frame */
+  /* load up each frame, reading the frame names from file */
   for( i = 0; i < animation[id].frameCount; ++i )
   {
     fscanf( fp, "%s", frameName );
@@ -46,6 +46,8 @@ void loadAnimation( int id, char *name )
 void freeAnimation( Animation *anim )
 {
   int i;
+
+  /* loop through frames, freeing them up */
 
   if( anim->frame != NULL )
   {
