@@ -9,6 +9,7 @@ extern void doPlayer();
 extern void doEntities();
 extern void doCollisions();
 extern void loadAllSprites();
+extern void loadAllSounds();
 extern TTF_Font *loadFont( char *, int);
 extern void addRock( int );
 extern void loadAllAnimations();
@@ -29,6 +30,9 @@ int main( int argc, char* argv[] )
 
   /* load all the sprites (player's actually) */
   loadAllSprites();
+
+  /* load our explosion */
+  loadAllSounds();
 
   /* load all frames of rock sprites */
   loadAllAnimations();

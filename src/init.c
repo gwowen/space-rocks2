@@ -32,11 +32,19 @@ void init( char *title )
   else {
     int imgFlags = IMG_INIT_PNG;
     if( ! ( IMG_Init( imgFlags) &imgFlags ) ) {
-      printf( "SDL_image could not initialize. SDL_image error%s \n", IMG_GetError() );
+      printf( "SDL_image could not initialize. SDL_image error %s \n", IMG_GetError() );
       exit(1);
     }
   }
 
+  /* initialize SDL_mixer */
+  if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+  {
+    printf( "SDL_mixer could not initialize. SDL_mixer error %s", Mix_GetError() );
+    exit(1);
+  }
+
+  /* initialize TTF */
   if( TTF_Init() < 0 ) {
     printf("Couldn't initialize SDL TTF: %s\n", SDL_GetError() );
     exit(1);

@@ -2,6 +2,7 @@
 
 extern void addRandomParticle( float, float );
 extern void addScore();
+extern void playSound( int );
 
 int collision( int, int, int, int, int, int, int, int );
 
@@ -25,8 +26,10 @@ void doCollisions()
 
     if( collision( entity[i].x, entity[i].y, entity[i].w, entity[i].h, player.x, player.y, player.w, player.h ) )
     {
-      //TODO: we need an explosion sound here... also need to introduce lives
+      //TODO: need to introduce lives
       player.active = 0;
+
+      playSound( EXPLOSION_SOUND );
     }
   }
 }

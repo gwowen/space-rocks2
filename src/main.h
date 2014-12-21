@@ -8,3 +8,4 @@ Star stars[MAX_STARS];
 Entity player, *self, entity[MAX_ENTITIES];
 Sprite sprite[MAX_SPRITES];
 Animation animation[MAX_ANIMATIONS];
+Sound sound[MAX_SOUNDS];

@@ -42,4 +42,7 @@ typedef struct Entity
   void (*draw)(void);
 } Entity;
 
-/* TODO: add struct for Sound */
+typedef struct Sound
+{
+  Mix_Chunk *effect;
+} Sound;
