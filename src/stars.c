@@ -34,6 +34,8 @@ int getStarColor( int speed )
 
   SDL_Color color;
 
+  /* here we just give it a different color depending on random speeds... */
+
   switch( speed ) {
 
     case 1:

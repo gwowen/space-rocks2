@@ -25,7 +25,6 @@ void doPlayer()
     {
       player.y -= PLAYER_SPEED;
 
-      /* keep player from moving off the screen */
       if( player.y < 0 )
       {
         player.y = 0;
